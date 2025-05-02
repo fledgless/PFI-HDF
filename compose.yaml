@@ -4,7 +4,7 @@ services:
   database:
     image: 'mysql:latest'
     env_file:
-      - .env
+      - .env.local
     ports:
       - '3310:3306'
     volumes:
