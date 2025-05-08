@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\PageRepository;
+use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PageRepository::class)]
-class Page
+#[ORM\Entity(repositoryClass: ArticleRepository::class)]
+class Article
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -23,23 +23,17 @@ class Page
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $contenu = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $resume = null;
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $nomFichierMiniature = null;
+    private ?string $nomFicherMiniature = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $texteAlternatifMiniature = null;
-
-    #[ORM\ManyToOne(inversedBy: 'pages')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Category $category = null;
-
-    public function __toString()
-    {
-        return $this->titre;
-    }
 
     public function getId(): ?int
     {
@@ -82,26 +76,38 @@ class Page
         return $this;
     }
 
-    public function getResume(): ?string
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
-        return $this->resume;
+        return $this->createdAt;
     }
 
-    public function setResume(string $resume): static
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
-        $this->resume = $resume;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getNomFichierMiniature(): ?string
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        return $this->nomFichierMiniature;
+        return $this->updatedAt;
     }
 
-    public function setNomFichierMiniature(string $nomFichierMiniature): static
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
-        $this->nomFichierMiniature = $nomFichierMiniature;
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getNomFicherMiniature(): ?string
+    {
+        return $this->nomFicherMiniature;
+    }
+
+    public function setNomFicherMiniature(?string $nomFicherMiniature): static
+    {
+        $this->nomFicherMiniature = $nomFicherMiniature;
 
         return $this;
     }
@@ -114,18 +120,6 @@ class Page
     public function setTexteAlternatifMiniature(?string $texteAlternatifMiniature): static
     {
         $this->texteAlternatifMiniature = $texteAlternatifMiniature;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): static
-    {
-        $this->category = $category;
 
         return $this;
     }
