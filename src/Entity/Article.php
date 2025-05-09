@@ -30,7 +30,7 @@ class Article
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $nomFicherMiniature = null;
+    private ?string $nomFichierMiniature = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $texteAlternatifMiniature = null;
@@ -100,14 +100,14 @@ class Article
         return $this;
     }
 
-    public function getNomFicherMiniature(): ?string
+    public function getNomFichierMiniature(): ?string
     {
-        return $this->nomFicherMiniature;
+        return $this->nomFichierMiniature;
     }
 
-    public function setNomFicherMiniature(?string $nomFicherMiniature): static
+    public function setNomFichierMiniature(?string $nomFichierMiniature): static
     {
-        $this->nomFicherMiniature = $nomFicherMiniature;
+        $this->nomFichierMiniature = $nomFichierMiniature;
 
         return $this;
     }
