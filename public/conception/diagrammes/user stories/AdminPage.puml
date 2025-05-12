@@ -1,0 +1,34 @@
+@startuml UserStoryAdminPage
+
+left to right direction
+skinparam actorFontStyle bold
+skinparam usecase {
+    BackgroundColor YellowGreen
+    BorderColor Black
+}
+
+actor "Admin" as Ad #Red;text:Red
+
+package "Gestion des pages" {
+    usecase "Ajouter page" as Ap #LightGray;text:Black
+    usecase "Modifier page" as Mp #LightGray;text:Black
+    usecase "Supprimer page" as Sp #LightGray;text:Black
+}
+
+' Relations entre acteurs et cas d'utilisation
+Ad --> Ap
+Ad --> Mp
+Ad --> Sp
+
+' Description des cas d'utilisation
+note right of Ap
+    En temps qu'administrateur, je peux ajouter une nouvelle page.
+end note
+note right of Mp
+    En temps qu'administrateur, je peux modifier une page existante.
+end note
+note right of Sp
+    En temps qu'administrateur, je peux supprimer une page existante.
+end note
+
+@enduml

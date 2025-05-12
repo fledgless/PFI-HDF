@@ -1,0 +1,29 @@
+@startuml UserStoryUserArticle
+
+left to right direction
+skinparam actorFontStyle bold
+skinparam usecase {
+    BackgroundColor YellowGreen
+    BorderColor Black
+}
+
+actor "Utilisateur" as U #LightGreen;text:LightGreen
+
+package "Gestion des articles" {
+    usecase "Liste articles" as La #LightGray;text:Black
+    usecase "Consulter article" as Ca #LightGray;text:Black
+}
+
+' Relations entre acteurs et cas d'utilisation
+U --> La
+U --> Ca
+
+' Description des cas d'utilisation
+note right of La
+    En tant qu'utilisateur, je peux consulter la liste des articles.
+end note
+note right of Ca
+    En tant qu'utilisateur, je peux consulter un article.
+end note
+
+@enduml

@@ -10,7 +10,7 @@ package "Professionnel" {
   actor "Superadmin" as S #Orange;text:Orange
 }
 ' Utilisateur non connecté
-actor "Visiteur" as V #LightGreen;text:LightGreen
+actor "Utilisateur" as U #LightGreen;text:LightGreen
 
 package "Système" {
   usecase "Accueil" as UC1 #LightGray;text:Black
@@ -37,10 +37,10 @@ package "Système" {
 
 ' Relations entre acteurs et cas d'utilisation
 ' Utilisateur non connecté
-V --> UC1
-V --> UC2
-V --> UC4
-V --> UC5
+U --> UC1
+U --> UC2
+U --> UC4
+U --> UC5
 
 ' Utilisateur connecté avec le rôle d'Auteur
 Au --> UC3
