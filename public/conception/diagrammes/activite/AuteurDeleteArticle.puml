@@ -15,7 +15,7 @@ else (oui)
   :Sélectionner un article;
     :Cliquer sur le bouton de suppression;
   |Serveur|
-  :Envoi de la requête de suppression en base de données;
+  :Vérification de l'article à supprimer;
   if () is (si erreur) then
     |Auteur|
     #red:**Message d'erreur**;

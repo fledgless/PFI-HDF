@@ -1,0 +1,21 @@
+@startuml UserReadArticle
+title Consultation d'un article par un utilisateur
+
+|Utilisateur|
+start
+:Cliquer sur la page Actualités;
+:Sélectionner un article;
+|Serveur|
+:Vérification de l'article à consulter;
+if (si erreur) then (non)
+  |Utilisateur|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Serveur|
+  :Renvoi de l'article à consulter;
+  |Utilisateur|
+  :Affichage de l'article;
+  stop
+endif
+@enduml

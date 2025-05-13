@@ -15,7 +15,7 @@ else (oui)
   :Sélectionner une catégorie;
     :Cliquer sur le bouton de suppression;
   |Serveur|
-  :Envoi de la requête de suppression en base de données;
+  :Vérification de la catégorie à supprimer;
   if () is (si erreur) then
     |Admin|
     #red:**Message d'erreur**;
@@ -29,7 +29,6 @@ else (oui)
     :Suppression de la catégorie en base de données;
     |Admin|
     :Affichage d'un message de succès;
-    :Redirection vers la liste des catégories;
     stop
   endif
 endif

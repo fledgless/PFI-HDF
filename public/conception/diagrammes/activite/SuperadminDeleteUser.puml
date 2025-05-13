@@ -5,7 +5,7 @@ title Suppression d'un utilisateur par l'administrateur système
 start
 :Accès au dashboard;
 |Serveur|
-if (Utilisateur est connecté et a le role admin ?) then (non)
+if (Utilisateur est connecté et a le role superadmin ?) then (non)
   |Superadmin|
   #red: **Message d'erreur**;
   stop
@@ -15,7 +15,7 @@ else (oui)
   :Sélectionner un utilisateur;
     :Cliquer sur le bouton de suppression;
   |Serveur|
-  :Envoi de la requête de suppression en base de données;
+  :Vérification de l'utilisateur à supprimer;
   if () is (si erreur) then
     |Superadmin|
     #red:**Message d'erreur**;
@@ -29,7 +29,6 @@ else (oui)
     :Suppression de la page en base de données;
     |Superadmin|
     :Affichage d'un message de succès;
-    :Redirection vers la liste des utilisateurs;
     stop
   endif
 endif

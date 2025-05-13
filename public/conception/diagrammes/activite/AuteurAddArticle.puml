@@ -1,5 +1,6 @@
 @startuml AuteurAddArticle
 title Ajout d'un article par un auteur
+
 |Auteur|
 start
 :Accès au dashboard;
@@ -21,3 +22,4 @@ else (oui)
     :Validation des données;
     stop
   endif
+@enduml

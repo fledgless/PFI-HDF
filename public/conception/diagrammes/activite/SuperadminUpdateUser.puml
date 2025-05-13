@@ -1,0 +1,36 @@
+@startuml SuperadminUpdateUser
+title Modification d'un utilisateur par un administrateur
+
+|Superadmin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role Superadmin ?) then (non)
+  |Superadmin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Superadmin|
+  :Accès à la section de gestion des utilisateurs;
+  :Sélectionner l'utilisateur à modifier;
+  |Serveur|
+  :Vérification de l'utilisateur à modifier;
+  if () is (si n'existe pas) then
+    |Superadmin|
+    #red:**Message d'erreur**;
+    stop
+  else (si existe)
+    |Serveur|
+    :Renvoi de l'article à modifier;
+    |Superadmin|
+    :Affichage du formulaire de modification;
+    repeat
+    :Remplir le formulaire de modification de l'utilisateur;
+    |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Superadmin|
+    :Validation du formulaire;
+    stop
+  endif
+@enduml

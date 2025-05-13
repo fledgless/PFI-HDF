@@ -1,5 +1,6 @@
 @startuml AdminAddCategorie
 title Ajout d'une catégorie par un administrateur
+
 |Admin|
 start
 :Accès au dashboard;
@@ -17,10 +18,8 @@ else (oui)
   |Serveur|
   :Vérification des données du formulaire;
   repeat while (Données valides?) is (non) not (oui)
-    :Création de la catégorie en base de données;
     |Admin|
-    :Message de succès;
-    :Redirection vers la liste des catégories ou création d'une autre catégorie;
+    :Validation des données;
     stop
   endif
 @enduml

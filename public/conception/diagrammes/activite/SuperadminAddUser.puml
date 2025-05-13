@@ -21,3 +21,4 @@ else (oui)
     :Validation des données;
     stop
   endif
+@enduml
