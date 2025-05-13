@@ -17,7 +17,10 @@ else (oui)
   |Serveur|
   :Vérification des données du formulaire;
   repeat while (Données valides?) is (non) not (oui)
+    :Création de la page en base de données;
     |Admin|
-    :Validation des données;
+    :Message de succès;
+    :Redirection vers la liste des pages ou création d'une autre page;
     stop
-  endif
+endif
+@enduml

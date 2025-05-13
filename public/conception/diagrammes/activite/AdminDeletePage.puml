@@ -1,0 +1,36 @@
+@startuml AdminDeletePage
+title Suppression d'une page par un administrateur
+
+|Admin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role admin ?) then (non)
+  |Admin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Admin|
+  :Accès à la section de gestion des pages;
+  :Sélectionner une page;
+    :Cliquer sur le bouton de suppression;
+  |Serveur|
+  :Envoi de la requête de suppression en base de données;
+  if () is (si erreur) then
+    |Admin|
+    #red:**Message d'erreur**;
+    stop
+  else (si valide)
+    |Serveur|
+    :Demande de confirmation;
+    |Admin|
+    :Confirmation de la suppression;
+    |Serveur|
+    :Suppression de la page en base de données;
+    |Admin|
+    :Affichage d'un message de succès;
+    :Redirection vers la liste des pages;
+    stop
+  endif
+endif
+@enduml
