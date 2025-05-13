@@ -1,0 +1,23 @@
+@startuml AdminAddCategorie
+title Ajout d'une catégorie par un administrateur
+|Admin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role admin ?) then (non)
+  |Admin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Admin|
+  :Accès à la section de gestion des catégories;
+  :Ajouter une nouvelle catégorie;
+  repeat
+  :Remplir le formulaire d'ajout de catégorie;
+  |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Admin|
+    :Validation des données;
+    stop
+  endif

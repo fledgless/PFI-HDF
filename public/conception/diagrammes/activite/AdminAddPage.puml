@@ -1,0 +1,23 @@
+@startuml AdminAddPage
+title Ajout d'une page par un administrateur
+|Admin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role admin ?) then (non)
+  |Admin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Admin|
+  :Accès à la section de gestion des pages;
+  :Ajouter une nouvelle page;
+  repeat
+  :Remplir le formulaire d'ajout de page;
+  |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Admin|
+    :Validation des données;
+    stop
+  endif

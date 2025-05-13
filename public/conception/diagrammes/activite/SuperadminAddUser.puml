@@ -1,0 +1,23 @@
+@startuml SuperadminAddUser
+title Ajout d'un utilisateur par l'administrateur système
+|Superadmin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role superadmin ?) then (non)
+  |Superadmin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Superadmin|
+  :Accès à la section de gestion des utilisateurs;
+  :Ajouter un nouvel utilisateur;
+  repeat
+  :Remplir le formulaire d'ajout d'utilisateur  ;
+  |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Superadmin|
+    :Validation des données;
+    stop
+  endif
