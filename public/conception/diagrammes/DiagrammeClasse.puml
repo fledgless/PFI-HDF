@@ -1,0 +1,64 @@
+@startuml DiagrammeClasse
+
+class User {
+    -id: int
+    -email: string
+    -password: string
+    -role: json
+}
+
+class Article {
+    -id: int
+    -titre: string
+    -slug: string
+    -contenu: string
+    -createdAt: datetime
+    -updatedAt: datetime
+    -nomFichierMiniature: string
+    -texteAlternatifMiniature: string
+}
+
+class Categorie {
+    -id: int
+    -nom: string
+    -slug: string
+}
+
+class Page {
+    -id: int
+    -titre: string
+    -slug: string
+    -contenu: string
+    -nomFichierMiniature: string
+    -texteAlternatifMiniature: string
+}
+
+class Auteur {
+    +ajouterArticle(): void 
+    +modifierArticle(): void
+    +supprimerArticle(): void
+}
+
+class Admin {
+    +ajouterCategorie(): void
+    +modifierCategorie(): void
+    +supprimerCategorie(): void
+    +ajouterPage(): void
+    +modifierPage(): void
+    +supprimerPage(): void
+}
+
+class Superadmin {
+    +ajouterUtilisateur(): void
+    +modifierUtilisateur(): void
+    +supprimerUtilisateur(): void
+}
+
+User <|-- Auteur : hérite
+User <|-- Admin : hérite
+User <|-- Superadmin : hérite
+
+Page "1" -- "0..*" Categorie : appartient à
+Article "1" -- "0..*" User : écrit
+
+@enduml
