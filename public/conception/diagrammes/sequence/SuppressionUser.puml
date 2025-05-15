@@ -1,0 +1,28 @@
+@startuml SuppressionUser
+title "Diagramme de séquence pour la suppression d'un utilisateur"
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter en tant que Superadmin
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant que Superadmin
+U -> A : Afficher la liste des utilisateurs
+A -> S : Demande de la liste des utilisateurs
+S -> Db : Récupération de la liste des utilisateurs
+Db --> S : Renvoi de la liste des utilisateurs
+S --> A : Liste des utilisateurs
+A --> U : Affichage de la liste des utilisateurs
+U -> A : Sélectionner l'utilisateur à supprimer
+A -> S : Envoi de la demande de suppression
+S -> Db : Suppression de l'utilisateur dans la BDD
+Db --> S : Confirmation de la suppression
+S --> A : Utilisateur supprimé avec succès
+A --> U : Utilisateur supprimé avec succès
+
+@enduml  

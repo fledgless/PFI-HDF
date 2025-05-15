@@ -1,0 +1,22 @@
+@startuml AjoutCategorie 
+title "Diagramme de séquence pour l'ajout d'une catégorie"
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter avec le role Admin
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant qu'Admin
+U -> A : Ajouter une catégorie
+A -> S : Envoi de la catégorie
+S -> Db : Ajout de la catégorie dans la BDD
+Db --> S : Confirmation de l'ajout
+S --> A : Catégorie ajoutée avec succès
+A --> U : Catégorie ajoutée avec succès
+
+@enduml  

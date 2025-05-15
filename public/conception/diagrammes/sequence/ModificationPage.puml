@@ -1,0 +1,34 @@
+@startuml ModificationPage
+title "Diagramme de séquence pour la modification d'une page"
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter en tant qu'Admin
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant qu'Admin
+U -> A : Afficher la liste des pages
+A -> S : Demande de la liste des pages
+S -> Db : Récupération de la liste des pages
+Db --> S : Renvoi de la liste des pages
+S --> A : Liste des pages
+A --> U : Affichage de la liste des pages
+U -> A : Sélectionner une page à modifier
+A -> S : Demande de la page à modifier
+S -> Db : Récupération de la page
+Db --> S : Page récupérée
+S --> A : Page récupérée
+A --> U : Affichage de la page
+U -> A : Modifier la page
+A -> S : Envoi de la page modifiée
+S -> Db : Modification de la page dans la BDD
+Db --> S : Confirmation de la modification
+S --> A : Page modifiée avec succès
+A --> U : Page modifiée avec succès
+
+@enduml  

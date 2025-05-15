@@ -1,0 +1,22 @@
+@startuml AjoutUser
+title "Diagramme de séquence pour l'ajout d'un utilisateur"
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter en tant que Superadmin
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant que Superadmin
+U -> A : Ajouter un utilisateur
+A -> S : Envoi de l'utilisateur
+S -> Db : Ajout de l'utilisateur dans la BDD
+Db --> S : Confirmation de l'ajout
+S --> A : Utilisateur ajouté avec succès
+A --> U : Utilisateur ajouté avec succès
+
+@enduml  
