@@ -1,0 +1,29 @@
+@startuml SuperadminReadUser
+title Consultation d'un utilisateur par un administrateur
+
+|Superadmin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role superadmin ?) then (non)
+  |Superadmin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Superadmin|
+  :Accès à la section de gestion des utilisateurs;
+  :Sélectionner un utilisateur;
+  |Serveur|
+  :Vérification de l'utilisateur à consulter;
+  if () is (si erreur) then
+    |Superadmin|
+    #red:**Message d'erreur**;
+    stop
+  else (si valide)
+    |Serveur|
+    :Renvoi de l'utilisateur à consulter;
+    |Superadmin|
+    :Affichage des informations de l'utilisateur;
+    stop
+  endif
+@enduml

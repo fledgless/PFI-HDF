@@ -1,0 +1,25 @@
+@startuml AuteurAddArticle
+title Ajout d'un article par un auteur
+
+|Auteur|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role auteur ?) then (non)
+  |Auteur|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Auteur|
+  :Accès à la section de gestion des articles;
+  :Ajouter un nouvel article;
+  repeat
+  :Remplir le formulaire d'ajout d'article;
+  |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Auteur|
+    :Validation des données;
+    stop
+  endif
+@enduml

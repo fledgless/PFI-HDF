@@ -1,0 +1,34 @@
+@startuml UserStoryAdminCategorie
+
+left to right direction
+skinparam actorFontStyle bold
+skinparam usecase {
+    BackgroundColor YellowGreen
+    BorderColor Black
+}
+
+actor "Admin" as Ad #Red;text:Red
+
+package "Gestion des catégories" {
+    usecase "Ajouter catégorie" as Ac #LightGray;text:Black
+    usecase "Modifier catégorie" as Mc #LightGray;text:Black
+    usecase "Supprimer catégorie" as Sc #LightGray;text:Black
+}
+
+' Relations entre acteurs et cas d'utilisation
+Ad --> Ac
+Ad --> Mc
+Ad --> Sc
+
+' Description des cas d'utilisation
+note right of Ac
+    En temps qu'administrateur, je peux ajouter une nouvelle catégorie.
+end note
+note right of Mc
+    En temps qu'administrateur, je peux modifier une catégorie existante.
+end note
+note right of Sc
+    En temps qu'administrateur, je peux supprimer une catégorie existante.
+end note
+
+@enduml

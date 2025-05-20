@@ -1,0 +1,28 @@
+@startuml SuppressionArticle
+title "Diagramme de séquence pour la suppression d'un article"
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter en tant qu'Auteur
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant qu'Auteur
+U -> A : Afficher la liste des articles
+A -> S : Demande de la liste des articles
+S -> Db : Récupération de la liste des articles
+Db --> S : Renvoi de la liste des articles
+S --> A : Liste des articles
+A --> U : Affichage de la liste des articles
+U -> A : Sélectionner l'article à supprimer
+A -> S : Envoi de la demande de suppression
+S -> Db : Suppression de l'article dans la BDD
+Db --> S : Confirmation de la suppression
+S --> A : Article supprimé avec succès
+A --> U : Article supprimé avec succès
+
+@enduml  

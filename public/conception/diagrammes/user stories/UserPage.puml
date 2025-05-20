@@ -1,0 +1,29 @@
+@startuml UserStoryUserPage
+
+left to right direction
+skinparam actorFontStyle bold
+skinparam usecase {
+    BackgroundColor YellowGreen
+    BorderColor Black
+}
+
+actor "Utilisateur" as U #LightGreen;text:LightGreen
+
+package "Gestion des pages" {
+    usecase "Liste pages" as Lp #LightGray;text:Black
+    usecase "Consulter page" as Cp #LightGray;text:Black
+}
+
+' Relations entre acteurs et cas d'utilisation
+U --> Lp
+U --> Cp
+
+' Description des cas d'utilisation
+note right of Lp
+    En tant qu'utilisateur, je peux consulter la liste des pages par catégorie.
+end note
+note right of Cp
+    En tant qu'utilisateur, je peux consulter une page.
+end note
+
+@enduml

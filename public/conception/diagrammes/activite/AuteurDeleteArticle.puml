@@ -1,0 +1,36 @@
+@startuml AuteurDeleteArticle
+title Suppression d'un article par un auteur
+
+|Auteur|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role auteur ?) then (non)
+  |Auteur|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Auteur|
+  :Accès à la section de gestion des articles;
+  :Sélectionner un article;
+    :Cliquer sur le bouton de suppression;
+  |Serveur|
+  :Vérification de l'article à supprimer;
+  if () is (si erreur) then
+    |Auteur|
+    #red:**Message d'erreur**;
+    stop
+  else (si valide)
+    |Serveur|
+    :Demande de confirmation;
+    |Auteur|
+    :Confirmation de la suppression;
+    |Serveur|
+    :Suppression de la page en base de données;
+    |Auteur|
+    :Affichage d'un message de succès;
+    :Redirection vers la liste des articles;
+    stop
+  endif
+endif
+@enduml

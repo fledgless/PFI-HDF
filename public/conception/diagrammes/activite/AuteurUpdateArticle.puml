@@ -1,0 +1,36 @@
+@startuml AuteurUpdateArticle
+title Modification d'un article par un auteur
+
+|Auteur|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role auteur ?) then (non)
+  |Auteur|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Auteur|
+  :Accès à la section de gestion des articles;
+  :Sélectionner l'article à modifier;
+  |Serveur|
+  :Vérification de l'article à modifier;
+  if () is (si n'existe pas) then
+    |Auteur|
+    #red:**Message d'erreur**;
+    stop
+  else (si existe)
+    |Serveur|
+    :Renvoi de l'article à modifier;
+    |Auteur|
+    :Affichage du formulaire de modification;
+    repeat
+    :Remplir le formulaire de modification de l'article;
+    |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Auteur|
+    :Validation du formulaire;
+    stop
+  endif
+@enduml

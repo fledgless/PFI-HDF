@@ -1,0 +1,28 @@
+@startuml SuppressionCategorie
+title "Diagramme de séquence pour la suppression d'une catégorie"
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter en tant qu'Admin
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant qu'Admin
+U -> A : Afficher la liste des catégories
+A -> S : Demande d'affichage des catégories
+S -> Db : Récupération des catégories
+Db --> S : Renvoi des catégories
+S --> A : Catégories récupérées
+A --> U : Affichage des catégories
+U -> A : Sélectionner la catégorie à supprimer
+A -> S : Envoi de la demande de suppression
+S -> Db : Suppression de la catégorie dans la BDD
+Db --> S : Confirmation de la suppression
+S --> A : Catégorie supprimée avec succès
+A --> U : Catégorie supprimée avec succès
+
+@enduml  

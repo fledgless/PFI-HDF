@@ -1,0 +1,22 @@
+@startuml AjoutArticle 
+title "Diagramme de séquence pour l'ajout d'un article" 
+
+actor Utilisateur as U #Purple 
+participant Application as A #Yellow 
+participant Serveur as S #Green 
+participant BDD as Db #Red 
+
+U -> A : Se connecter avec le role Auteur
+A -> S : Authentification 
+S -> Db : Vérification des identifiants 
+Db --> S : Confirmation des identifiants
+S --> A : Authentification réussie
+A --> U : Vous êtes connecté en tant qu'Auteur
+U -> A : Ajouter un article
+A -> S : Envoi de l'article
+S -> Db : Ajout de l'article dans la BDD
+Db --> S : Confirmation de l'ajout
+S --> A : Article ajouté avec succès
+A --> U : Article ajouté avec succès
+
+@enduml  

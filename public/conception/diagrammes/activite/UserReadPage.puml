@@ -1,0 +1,22 @@
+@startuml UserReadPage
+title Consultation d'une page par un utilisateur
+
+|Utilisateur|
+start
+:Cliquer sur une catégorie dans la barre de navigation;
+:Affichage de la liste des pages appartenant à la catégorie;
+:Sélectionner une page;
+|Serveur|
+:Vérification de la page à consulter;
+if (si erreur) then (non)
+  |Utilisateur|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Serveur|
+  :Renvoi de la page à consulter;
+  |Utilisateur|
+  :Affichage de la page;
+  stop
+endif
+@enduml

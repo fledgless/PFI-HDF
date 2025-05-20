@@ -1,0 +1,36 @@
+@startuml AdminUpdatePage
+title Modification d'une page par un administrateur
+
+|Admin|
+start
+:Accès au dashboard;
+|Serveur|
+if (Utilisateur est connecté et a le role admin ?) then (non)
+  |Admin|
+  #red: **Message d'erreur**;
+  stop
+else (oui)
+  |Admin|
+  :Accès à la section de gestion des pages;
+  :Sélectionner la page à modifier;
+  |Serveur|
+  :Vérification de la page à modifier;
+  if () is (si n'existe pas) then
+    |Admin|
+    #red:**Message d'erreur**;
+    stop
+  else (si existe)
+    |Serveur|
+    :Renvoi de la page à modifier;
+    |Admin|
+    :Affichage du formulaire de modification;
+    repeat
+    :Remplir le formulaire de modification de la page;
+    |Serveur|
+  :Vérification des données du formulaire;
+  repeat while (Données valides?) is (non) not (oui)
+    |Admin|
+    :Validation des données;
+    stop
+  endif
+@enduml
