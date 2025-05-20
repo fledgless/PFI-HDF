@@ -52,5 +52,6 @@
   "build/fonts/DuplicateSans-Italic.woff2": "/build/fonts/DuplicateSans-Italic.d6f56f76.woff2",
   "build/fonts/DuplicateSans-Heavy.woff2": "/build/fonts/DuplicateSans-Heavy.89885fe6.woff2",
   "build/fonts/DuplicateSans.woff2": "/build/fonts/DuplicateSans.6bfea6c0.woff2",
-  "build/fonts/DuplicateSans-Thin.woff2": "/build/fonts/DuplicateSans-Thin.b4ac001d.woff2"
+  "build/fonts/DuplicateSans-Thin.woff2": "/build/fonts/DuplicateSans-Thin.b4ac001d.woff2",
+  "build/fonts/Inter-VariableFont_opsz,wght.ttf": "/build/fonts/Inter-VariableFont_opsz,wght.e05c5f3d.ttf"
 }

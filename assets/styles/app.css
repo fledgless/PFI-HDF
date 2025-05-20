@@ -1,7 +1,15 @@
 @import url('/public/fonts/DuplicateSans/stylesheet.css');
+@font-face {
+    font-family: Inter;
+    src: url(/public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
 
 body {
     background-color: #fff;
+}
+
+ul {
+    list-style: none;
 }
 
 header {
@@ -30,7 +38,6 @@ header {
 
 nav ul {
     display: flex;
-    list-style: none;
     padding: 0;
     margin: 0;
     font-weight: bold;
@@ -57,7 +64,7 @@ nav ul li a {
     font-size: 1rem;
 }
 
-nav ul li a:hover {
+ul li a:hover {
     color: #db052b;
     transition: 0.3s;
 }
@@ -75,4 +82,87 @@ footer {
     background-color: #383838;
     left: 0;
     bottom: 0;
+}
+
+.socials {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 1.25rem;
+    padding: 2rem 3.125rem;
+    border-bottom: 1px solid #535353;
+}
+
+.socials p {
+    padding: 0;
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color: #fff;
+    font-family: 'Duplicate Sans';
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.socials ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.links-logo {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 1.25rem;
+    padding: 4rem 3.125rem;
+}
+
+.links-logo .left {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row: 1;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.links-logo .left ul li a {
+    line-height: 1.2;
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Inter';
+    margin: 2px;
+}
+
+.links-logo .left ul li a:hover {
+    color: #db052b;
+    transition: 0.3s;
+}
+
+.links-logo .right {
+    grid-column-start: 8;
+    grid-column-end: 13;
+    grid-row: 1;
+    padding: 0;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.links-logo .right img {
+    width: 70px;
+    height: auto;
+}
+
+.links-logo .right p {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 11px;
+    line-height: 1.2;
 }
