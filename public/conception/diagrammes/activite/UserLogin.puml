@@ -30,7 +30,4 @@ else (oui)
       end
     endif
 endif
-
-
-
 @enduml
