@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActualitesController!{% endblock %}
+
+{% block body %}
+<div class="content-header">
+    <p>Actualités et évènements</p>
+    <h1>Actualités Pole Formation Insertion</h1>
+</div>
+<h2>Toutes nos actualités</h2>
+<div class="articles">
+    {% for article in articles %}
+        <a href="" class="article">
+            <div>
+                <img src="{{ article.nomFichierMiniature }}" alt="{{ article.texteAlternatifMiniature }}" class="article-image">
+            </div>
+            <h3>{{ article.titre }}</h3>
+            <p>{{ article.contenu }}</p>
+            <p><strong>Date de publication : {{ article.datePublication|date('d/m/Y') }}</strong></p>
+        </a>
+    {% endfor %}
+{% endblock %}

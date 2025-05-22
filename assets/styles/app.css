@@ -51,6 +51,26 @@ main {
     position: relative;
 }
 
+main ul {
+    padding: 0;
+}
+
+main ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+main li::before {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    left: 0;
+    width: .25rem;
+    height: .25rem;
+    background-color: #db052b;
+}
+
 .banner {
     background-color: #f5f6eb;
     font-size: 28px;
@@ -234,29 +254,11 @@ ul {
     text-align: right;
 }
 
-main ul {
-    padding: 0;
-}
-
-main ul li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin: 0 0 1rem;
-}
-
-main li::before {
-    content: "";
-    position: absolute;
-    top: .5rem;
-    left: 0;
-    width: .25rem;
-    height: .25rem;
-    background-color: #db052b;
-}
 
 
 
-/* contact form */
+
+/* Page contact - Formulaire de contact */
 form {
     display: flex;
     flex-direction: column;
@@ -275,7 +277,7 @@ form h2 {
     text-align: center;
 }
 
-form input, form textarea {
+form input, form textarea, form button {
     padding: 1rem;
     margin: 1rem 0 1.5rem;
     border: 1px solid #d8d8d8;
@@ -284,13 +286,13 @@ form input, form textarea {
     font-family: 'Inter';
 }
 
-form #submitBtn {
+form #submitBtn, form button {
     background-color: #383838;
     color: #fff;
     cursor: pointer;
 }
 
-form #submitBtn:hover {
+form #submitBtn:hover, form button:hover {
     background-color: #db052b;
     transition: 0.3s;
 }
