@@ -3,18 +3,19 @@
 {% block title %}Hello NousContacterController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>Nous contacter</h1>
+<div class="banner">N'hésitez pas à nous contacter !</div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/camer/Projects/symfony-projects/pfi_cfp_ste_barbe/src/Controller/NousContacterController.php</code></li>
-        <li>Your template at <code>C:/Users/camer/Projects/symfony-projects/pfi_cfp_ste_barbe/templates/nous_contacter/index.html.twig</code></li>
-    </ul>
-</div>
+<form action="">
+    <h2>Contactez-nous !</h2>
+    <label for="name">Nom*</label>
+    <input type="text" name="name" placeholder="Veuillez indiquer votre nom..." required>
+    <label for="email">Email*</label>
+    <input type="email" name="email" placeholder="Veuillez indiquer votre email..." required>
+    <label for="subject">Sujet*</label>
+    <input type="text" name="subject" placeholder="Veuillez indiquer le sujet de votre message..." required>
+    <label for="message">Message*</label>
+    <textarea name="message" id="" cols="30" rows="10" placeholder="Veuillez indiquer votre message..." required></textarea>
+    <input type="submit" id="submitBtn" value="Soumettre">
+</form>
 {% endblock %}

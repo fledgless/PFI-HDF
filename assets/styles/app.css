@@ -41,6 +41,10 @@ p a {
     text-decoration: none;
 }
 
+label {
+    font-weight: bold;
+}
+
 main {
     margin-top: 7.5rem;
     padding: 5rem 20rem;
@@ -248,4 +252,45 @@ main li::before {
     width: .25rem;
     height: .25rem;
     background-color: #db052b;
+}
+
+
+
+/* contact form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    position: relative;
+    background-color: #db052b;
+    padding: 2.5rem 0;
+    z-index: 1;
+    color: #fff;
+    font-family: 'Duplicate Sans';
+    font-size: 1.625rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+form input, form textarea {
+    padding: 1rem;
+    margin: 1rem 0 1.5rem;
+    border: 1px solid #d8d8d8;
+    border-radius: .25rem;
+    font-size: 16px;
+    font-family: 'Inter';
+}
+
+form #submitBtn {
+    background-color: #383838;
+    color: #fff;
+    cursor: pointer;
+}
+
+form #submitBtn:hover {
+    background-color: #db052b;
+    transition: 0.3s;
 }
