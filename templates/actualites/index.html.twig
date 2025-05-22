@@ -3,10 +3,10 @@
 {% block title %}Hello ActualitesController!{% endblock %}
 
 {% block body %}
-<div class="content-header">
-    <p>Actualités et évènements</p>
-    <h1>Actualités Pole Formation Insertion</h1>
-</div>
+<div class="content-header"></div>
+<p>Actualités et évènements</p>
+<h1>Actualités Pole Formation Insertion</h1>
+<div class="banner">Découvrez nos dernières actualités !</div>
 <h2>Toutes nos actualités</h2>
 <div class="articles">
     {% for article in articles %}
@@ -19,4 +19,5 @@
             <p><strong>Date de publication : {{ article.datePublication|date('d/m/Y') }}</strong></p>
         </a>
     {% endfor %}
+</div>
 {% endblock %}

@@ -20,14 +20,19 @@ h1 {
     font-weight: bold;
     font-size: 50px;
     color: #383838;
+    margin: 0 0 15px;
 }
 
 h2 {
+    color: #db052b;
     font-family: 'Duplicate Sans';
     font-weight: bold;
     font-size: 40px;
-    color: #383838;
     line-height: 1;
+}
+
+.content h2 {
+    color: #383838;
 }
 
 p, .mentions-legales li {
@@ -47,8 +52,14 @@ label {
 
 main {
     margin-top: 7.5rem;
-    padding: 5rem 20rem;
+    padding: 5rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main .content {
+    padding: 2rem 15rem;
 }
 
 main ul {
@@ -71,12 +82,24 @@ main li::before {
     background-color: #db052b;
 }
 
+.content-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100dvw;
+    height: clamp(20rem, 40%, 30rem);
+    transform: translateX(-50%);
+    background-color: #fad56b;
+    z-index: -1;
+}
+
 .banner {
     background-color: #f5f6eb;
     font-size: 28px;
     font-weight: bold;
     padding: 3.5rem 2rem;
-    width: 110%;
+    width: 90%;
+    align-self: center;
     text-align: justify;
     margin: 0 -10%;
 } 
