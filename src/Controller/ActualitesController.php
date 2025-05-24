@@ -26,7 +26,7 @@ final class ActualitesController extends AbstractController
             return $this->redirectToRoute('app_actualites');
         }
 
-        return $this->render('actualites/detail.html.twig', [
+        return $this->render('actualites/show.html.twig', [
             'article' => $article
         ]);
     }

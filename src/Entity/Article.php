@@ -21,6 +21,15 @@ class Article implements TimeStampInterface
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $soustitre = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $resume = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $couleur = null;
+
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $contenu = null;
 
@@ -61,6 +70,42 @@ class Article implements TimeStampInterface
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getSoustitre(): ?string
+    {
+        return $this->soustitre;
+    }
+
+    public function setSoustitre(?string $soustitre): static
+    {
+        $this->soustitre = $soustitre;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(?string $resume): static
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getCouleur(): ?string
+    {
+        return $this->couleur;
+    }
+
+    public function setCouleur(string $couleur): static
+    {
+        $this->couleur = $couleur;
 
         return $this;
     }

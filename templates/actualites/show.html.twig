@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités - {{ article.titre }}{% endblock %}
+
+{% block body %}
+<article>
+    <p>{{ article.createdAt|format_datetime(locale='fr', pattern="dd MMMM YYYY") }}</p>
+    <h1>{{ article.titre }}</h1>
+    <h2>{{ article.soustitre }}</h2>
+    <p>{{ article.resume }}</p>
+    <div class="article-content">
+        <img src="/uploads/articles/{{ article.nomFichierMiniature }}" alt="{{ article.texteAlternatifMiniature }}" class="article-image">
+        <p>{{ article.contenu|raw }}</p>
+    </div>
+</article>
+{% endblock %}
