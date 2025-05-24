@@ -125,6 +125,8 @@ main li::before {
     }
 }
 
+
+/* Style du header */
 header {
     position: fixed;
     top: 0;
@@ -142,18 +144,19 @@ header {
 
 .header-content {
     width: 100%;
-    padding: 10px 35px;
+    padding: 20px 35px;
 }
 
 .header-content h1 {
     font-size: 28px;
-    margin-bottom: 2px;
+    margin: 5px 0 2px;
 }
 
 nav ul {
     display: flex;
+    align-items: center;
     padding: 0;
-    margin: 0;
+    margin: 2px 0;
     font-weight: bold;
     gap: 1.5rem;
     height: 40px;
@@ -183,6 +186,8 @@ ul li a:hover {
     transition: 0.3s;
 }
 
+
+/* Style du Footer */
 footer {
     position: relative;
     z-index: 70;
@@ -323,9 +328,15 @@ form #submitBtn:hover, form button:hover {
 
 
 /* Articles */
-
+/* Page actualites avec liste d'articles */
 .actualites-content {
-    margin-top: 3rem;
+    margin-top: 4rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #d8d8d8;
+    margin: 0 0 1rem;
 }
 
 .article {
@@ -333,7 +344,7 @@ form #submitBtn:hover, form button:hover {
     flex-direction: row;
     align-items: unset;
     padding: 0;
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
     text-decoration: none;
     font-size: 14px;
 }
@@ -410,4 +421,64 @@ form #submitBtn:hover, form button:hover {
     .article-content h3, .article-content p {
         margin: 5px;
     }
+}
+
+/* Page article individuel */
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+article .article-date {
+    font-family: "Duplicate Sans";
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+article h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+article h2 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #383838;
+}
+
+article .article-resume {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-family: 'Duplicate Sans';
+    font-weight: 500;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+article .article-main-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fad56b;
+    margin : 2rem 15rem;
+    padding: 2rem 5rem;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1040px) {
+    article .article-main-body {
+        margin: 2rem 0;
+        padding: 1rem 2.5rem;
+        width: 100%;
+    }
+    
 }

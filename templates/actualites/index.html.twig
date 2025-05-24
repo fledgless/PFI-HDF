@@ -9,6 +9,7 @@
 <div class="banner">Découvrez nos dernières actualités !</div>
 <div class="actualites-content">
     <h2>Toutes nos actualités</h2>
+    <hr>
     <div class="articles">
         {% for article in articles|reverse %}
             {% set article_show = path('article_show', { slug: article.slug }) %}
