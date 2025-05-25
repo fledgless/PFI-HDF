@@ -164,6 +164,8 @@ nav ul {
 
 nav ul li {
     display: inline-flex;
+    flex-direction: column;
+    position: relative;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -181,9 +183,54 @@ nav ul li a {
     font-size: 1rem;
 }
 
-ul li a:hover {
+nav ul li .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -4rem;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 100;
+    border-radius: 0.25rem;
+    padding: 3rem;
+    min-width: 30rem;
+}
+
+.subnav li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-top: .0625rem solid #f5f6eb;
+}
+
+.subnav li a {
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 1.125rem;
+}
+
+.subnav li a::after {
+    content: "➔";
+    color: #db052b;
+    background-color: #f5f6eb;
+    padding: 0.25rem;
+    margin: 0 1rem;
+    border-radius: 50%;
+}
+
+li:hover .subnav {
+    display: block;
+}
+
+ul li .link:hover, ul li .subnav li:hover, ul li a:hover {
     color: #db052b;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 

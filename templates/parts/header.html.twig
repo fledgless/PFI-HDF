@@ -8,7 +8,24 @@
             <ul class="main-nav">
                 {% for category in categories %}
                     <li class="main-nav-link">
-                        {{ category.nom }}
+                        <div class="link">
+                            {{ category.nom }}
+                            <span class="arrow">&#9660;</span>
+                        </div>
+                        <div class="subnav">
+                            <ul>
+                                {% for page in category.pages %}
+                                    <hr>
+                                    <li class="sub-nav-link">
+                                        <a href="{{ path('category_show', { slug: page.slug }) }}">{{ page.nom }}</a>
+                                    </li>
+                                {% endfor %}
+                                <hr>
+                                <li class="sub-nav-link">
+                                    <a href="">Test</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 {% endfor %}
                 <li class="main-nav-link">
