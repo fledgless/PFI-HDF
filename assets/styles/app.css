@@ -31,7 +31,7 @@ h2 {
     line-height: 1;
 }
 
-.content h2 {
+.content h2, .page-content h2 {
     color: #383838;
 }
 
@@ -60,6 +60,10 @@ main {
 
 main .content {
     padding: 2rem 15rem;
+}
+
+main .page-content {
+    padding: 14rem 15rem 0;
 }
 
 main ul {
@@ -152,7 +156,7 @@ header {
     margin: 5px 0 2px;
 }
 
-nav ul {
+nav .main-nav {
     display: flex;
     align-items: center;
     padding: 0;
@@ -162,7 +166,7 @@ nav ul {
     height: 40px;
 }
 
-nav ul li {
+.main-nav-link {
     display: inline-flex;
     flex-direction: column;
     position: relative;
@@ -183,11 +187,11 @@ nav ul li a {
     font-size: 1rem;
 }
 
-nav ul li .subnav {
+.subnav {
     display: none;
     position: absolute;
     top: 100%;
-    left: -4rem;
+    left: 0;
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -195,6 +199,12 @@ nav ul li .subnav {
     border-radius: 0.25rem;
     padding: 3rem;
     min-width: 30rem;
+}
+
+.subnav ul {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .subnav li {
@@ -223,7 +233,7 @@ nav ul li .subnav {
     border-radius: 50%;
 }
 
-li:hover .subnav {
+.main-nav-link:hover .subnav {
     display: block;
 }
 

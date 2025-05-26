@@ -15,15 +15,10 @@
                         <div class="subnav">
                             <ul>
                                 {% for page in category.pages %}
-                                    <hr>
                                     <li class="sub-nav-link">
-                                        <a href="{{ path('category_show', { slug: page.slug }) }}">{{ page.nom }}</a>
+                                        <a href="{{ path('page_show', { slug: page.slug }) }}">{{ page.titre }}</a>
                                     </li>
                                 {% endfor %}
-                                <hr>
-                                <li class="sub-nav-link">
-                                    <a href="">Test</a>
-                                </li>
                             </ul>
                         </div>
                     </li>
