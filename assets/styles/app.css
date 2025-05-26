@@ -340,7 +340,43 @@ ul {
 }
 
 
+/* Page d'accueil */
+.home {
+    padding: 0;
+}
 
+.container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.7) 100%), url(/public/images/image.png);
+    height: fit-content;
+    height: 30rem;
+    display: flex;
+    align-items: end;
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+}
+
+.container h1 {
+    color: #fff;
+    padding: 1rem 3rem;
+    width: 80%;
+}
+
+.numbers-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e1dbd0;
+    align-self: center;
+    width: 100%;
+}
+
+.numbers-container div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1rem 2rem;
+}
 
 
 /* Page contact - Formulaire de contact */
