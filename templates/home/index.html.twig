@@ -2,10 +2,30 @@
 
 {% block title %}Page d'accueil{% endblock %}
 
+{% block class %}home{% endblock %}
+
 {% block body %}
 <div class="container">
-    <h1>Page d'accueil</h1>
-    {{ dump(app.user) }}
+    <h1>Des dispositifs pour aider l'insertion et la formation des jeunes sur le territoire des Hauts-de-France</h1>
+</div>
+<div class="numbers-container">
+    <div>
+        <h2>Le Pole Formation Insertion en chiffres</h2>
+        <p>Implantés sur le territoire Nord Pas-de-Calais, nos 5 dispositifs aident les jeunes à se former et s'insèrer dans la vie active.</p>
+    </div>
+    <div class="numbers">
+        <div class="number-item">
+            <h3>+ de 1000</h3>
+            <p>jeunes formés chaque année</p>
+        </div>
+        <div class="number-item">
+            <h3>5</h3>
+            <p>dispositifs d'insertion</p>
+        </div>
+        <div class="number-item">
+            <h3>10</h3>
+            <p>partenaires locaux engagés</p>
+        </div>
 </div>
 {% endblock %}
 

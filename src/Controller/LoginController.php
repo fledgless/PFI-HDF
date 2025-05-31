@@ -18,5 +18,13 @@ final class LoginController extends AbstractController
                 'message' => 'User not authenticated',
             ], JsonResponse::HTTP_UNAUTHORIZED);
         }
+        return $this->json([
+            'message' => 'User authenticated',
+            'user' => [
+                'id' => $user->getId(),
+                'email' => $user->getEmail(),
+                'roles' => $user->getRoles(),
+            ],
+        ], JsonResponse::HTTP_OK);
     }
 }

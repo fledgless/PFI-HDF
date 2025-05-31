@@ -128,5 +128,5 @@ class Page
         $this->category = $category;
 
         return $this;
-    }
+    } 
 }

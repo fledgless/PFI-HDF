@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActualitesController!{% endblock %}
+
+{% block body %}
+<div class="content-header"></div>
+<p>Actualités et évènements</p>
+<h1>Actualités Pole Formation Insertion</h1>
+<div class="banner">Découvrez nos dernières actualités !</div>
+<div class="actualites-content">
+    <h2>Toutes nos actualités</h2>
+    <hr>
+    <div class="articles">
+        {% for article in articles|reverse %}
+            {% set article_show = path('article_show', { slug: article.slug }) %}
+            <a href="{{ article_show }}" class="article {{ article.couleur }}">
+                <div>
+                    <img src="/uploads/articles/{{ article.nomFichierMiniature }}" alt="{{ article.texteAlternatifMiniature }}" class="article-image">
+                </div>
+                <div class="article-content">
+                    <p>{{ article.createdAt|format_datetime(locale='fr', pattern="dd MMMM YYYY") }}</p>
+                    <h3>{{ article.titre }}</h3>
+                </div>                
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

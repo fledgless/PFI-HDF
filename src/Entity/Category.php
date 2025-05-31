@@ -25,6 +25,12 @@ class Category
     #[ORM\OneToMany(targetEntity: Page::class, mappedBy: 'category')]
     private Collection $pages;
 
+    // #[ORM\Column(length: 255)]
+    // private ?string $slug = null;
+
+    // #[ORM\Column(length: 255, nullable: true)]
+    // private ?string $description = null;
+
     public function __construct()
     {
         $this->pages = new ArrayCollection();
@@ -76,4 +82,28 @@ class Category
 
         return $this;
     }
+
+    // public function getSlug(): ?string
+    // {
+    //     return $this->slug;
+    // }
+
+    // public function setSlug(string $slug): static
+    // {
+    //     $this->slug = $slug;
+
+    //     return $this;
+    // }
+
+    // public function getDescription(): ?string
+    // {
+    //     return $this->description;
+    // }
+
+    // public function setDescription(?string $description): static
+    // {
+    //     $this->description = $description;
+
+    //     return $this;
+    // }
 }
